@@ -1,7 +1,7 @@
 {
   "name": "parseless",
-  "version": "1.0.23",
-  "description": "parse-server framework",
+  "version": "1.0.25",
+  "description": "parse-server library",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

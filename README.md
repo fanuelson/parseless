@@ -2,6 +2,9 @@
 
 Develop your parse-server apps using only raw jsons instead of ordinary parse server objects.
 
+[parseless on Github](http://github.com/rubenssvn/parseless)
+[parseless on npmjs](https://www.npmjs.com/package/parseless)
+
 
 # Examples
 
