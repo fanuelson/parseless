@@ -113,23 +113,6 @@ console.log(people);
 ### Dynamic filters
 You can filter your queries using [parse-server's own query api](http://docs.parseplatform.org/js/guide/#queries). Alternatively, you can use Parseless filter engine.
 ```js
-var query = new Parse.Query("Person");
-var filters = [
-    {"operation": "equalTo",
-     "field": "name",
-     "value": "Faruel"}
-];
-var people = await ParselessQuery.find("Person", query, filters);
-```
-
-The code above is equivalent to
-```js
-var query = new Parse.Query("Person");
-query.equalTo("name", "Faruel");
-var people = await ParselessQuery.find("Person", query, filters);
-```
-And to
-```js
 var filters = [
     {"operation": "equalTo",
      "field": "name",
@@ -137,6 +120,13 @@ var filters = [
 ];
 var people = await ParselessQuery.find("Person", null, filters); 
 // Passing null to "query" parameter will force Parseless to create a simple query object.
+```
+
+The code above is equivalent to
+```js
+var query = new Parse.Query("Person");
+query.equalTo("name", "Faruel");
+var people = await ParselessQuery.find("Person", query, filters);
 ```
 
 
