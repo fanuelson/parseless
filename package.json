@@ -1,0 +1,17 @@
+{
+  "name": "parseless",
+  "version": "1.0.23",
+  "description": "parse-server framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "parse",
+    "parse-server",
+    "persistence",
+    "javascript"
+  ],
+  "author": "rubenssvn",
+  "license": "ISC"
+}
