@@ -109,6 +109,37 @@ var people = await ParselessQuery.find("Person", query);
 console.log(people);
 // Ready to access raw attributes like people[0].name or people[0].country
 ```
+
+### Dynamic filters
+You can filter your queries using [parse-server's own query api](http://docs.parseplatform.org/js/guide/#queries). Alternatively, you can use Parseless filter engine.
+```js
+var query = new Parse.Query("Person");
+var filters = [
+    {"operation": "equalTo",
+     "field": "name",
+     "value": "Faruel"}
+];
+var people = await ParselessQuery.find("Person", query, filters);
+```
+
+The code above is equivalent to
+```js
+var query = new Parse.Query("Person");
+query.equalTo("name", "Faruel");
+var people = await ParselessQuery.find("Person", query, filters);
+```
+And to
+```js
+var filters = [
+    {"operation": "equalTo",
+     "field": "name",
+     "value": "Faruel"}
+];
+var people = await ParselessQuery.find("Person", null, filters); 
+// Passing null to "query" parameter will force Parseless to create a simple query object.
+```
+
+
 ### newQuery(classname)
 Returns an ordinary [parse-server query object](http://docs.parseplatform.org/js/guide/#queries)
 ```js

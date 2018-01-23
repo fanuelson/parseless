@@ -77,11 +77,18 @@ var ParselessQuery = {
     newQuery: function(classname) {
         return new Parse.Query(classname);
     },
-    find: function(classname, query) {
+    find: function(classname, query, filters) {
         try {
             if (!query) {
                 query = new Parse.Query(classname);
             }
+
+            if (filters) {
+                filters.forEach(function(filter) {
+                    query[filter.operation](filter.field, filter.value);
+                });
+            }
+
             return query.find().then(function(result) {
                 var formattedResult = [];
                 result.forEach(function(parseObject) {
