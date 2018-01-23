@@ -1,6 +1,6 @@
 {
   "name": "parseless",
-  "version": "1.0.25",
+  "version": "1.0.26",
   "description": "parse-server library",
   "main": "index.js",
   "scripts": {
