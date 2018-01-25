@@ -110,6 +110,17 @@ console.log(people);
 // Ready to access raw attributes like people[0].name or people[0].country
 ```
 
+### first(classname, query)
+[parse-server query objects](http://docs.parseplatform.org/js/guide/#queries)
+```js
+var query = new Parse.Query("Person");
+query.equalTo("name", "Faruel");
+
+var person = await ParselessQuery.first("Person", query);
+console.log(person);
+// Ready to access raw attributes like person.name or person.country
+```
+
 ### Dynamic filters
 You can filter your queries using [parse-server's own query api](http://docs.parseplatform.org/js/guide/#queries). Alternatively, you can use Parseless filter engine.
 ```js

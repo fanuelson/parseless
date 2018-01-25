@@ -102,6 +102,28 @@ var ParselessQuery = {
             if (error.code === 101) return;
             throw error;
         }
+    },
+    first: function(classname, query, filters) {
+        try {
+            if (!query) {
+                query = new Parse.Query(classname);
+            }
+
+            if (filters) {
+                filters.forEach(function(filter) {
+                    query[filter.operation](filter.field, filter.value);
+                });
+            }
+
+            return query.first().then(function(parseObject) {
+                var object = new ParselessObject(classname);
+                object.loadFromParseObject(parseObject);
+                return object;
+            });
+        } catch (error) {
+            if (error.code === 101) return;
+            throw error;
+        }
     }
 };
 exports.ParselessQuery = ParselessQuery;
