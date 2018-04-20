@@ -1,4 +1,4 @@
-const RESERVED_WORDS = ['save', 'loadFromParseObject', 'screatedAt', 'updatedAt', 'id', 'destroy', 'signUp'];
+const RESERVED_WORDS = ['save', 'loadFromParseObject', 'createdAt', 'updatedAt', 'id', 'destroy', 'signUp'];
 
 var ParselessObject = function(classname, object) {
     var ParseObjectExtend = Parse.Object.extend(classname);
